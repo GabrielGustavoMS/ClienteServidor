@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="_css/estilo.css"/>
+        <link rel="stylesheet" href="bootstrap/css/bootstrap-reboot.min.css"/>
+    </head>
+    <body>
+        <section class="container">
+            <h1>Checkout</h1>
+            
+            <section class="container-fluid">
+                
+                <form action="Calc" method="post" class="">
+                    <button type="submit" onclick="validaFormulario();">Comprar</button>
+
+                    <table id="fogoes">
+
+                        <h2>Fogões</h2>
+                        <thead>
+                            <tr>
+                                <th>   </th>
+                                <th>Quant. </th>
+                                <th>Produto</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>                            
+                                <td><input name="produto" value="0" type="checkbox" /> </td>
+
+                                <td> <input name="pr0_quant" type="number" min="0"/></td>
+
+                                <td>Fogão Consul 6 Bocas Erva Doce </td>   
+
+                            </tr>  
+                            <tr>
+                                <td><input type="checkbox" value="1" name="produto" /> </td>
+                                <td> <input name="pr1_quant" type="number" min="0"/></td>
+                                <td>Descrição produto</td>   
+                            </tr>                 
+                            <tr>
+                                <td><input type="checkbox" value="2" name="produto" /> </td>
+                                <td> <input name="pr2_quant" type="number" min="0"/></td>
+                                <td>Descrição produto</td>   
+                            </tr>                
+                        </tbody>
+                    </table>
+                    <table id="freezerRefrigerador">
+
+                        <h2>Freezer e Refrigeradores</h2>
+                        <thead>
+                            <tr>
+                                <th>   </th>
+                                <th>Quant. </th>
+                                <th>Produto</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>                            
+                                <td><input type="checkbox" value="3" name="produto" /> </td>
+
+                                <td> <input name="" type="number" min="0"/></td>
+
+                                <td>Descrição produto</td>   
+
+                            </tr>  
+                            <tr>
+                                <td><input type="checkbox" value="4" name="produto" /> </td>
+                               <td> <input name="" type="number" min="0"/></td>
+                                <td>Descrição produto</td>   
+                            </tr>                 
+                            <tr>
+                                <td><input type="checkbox" value="5" name="produto" /> </td>
+                                <td> <input name="" type="number"/></td>
+                                <td>Descrição produto</td>   
+                            </tr>                
+                        </tbody>
+                    </table>
+
+                    <table id="lavadoras">
+                        <h2>Lavadoras</h2>
+                        <thead>
+                            <tr>
+                                <th>   </th>
+                                <th>Quant. </th>
+                                <th>Produto</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>                            
+                                <td><input type="checkbox" value="6" name="produto" /> </td>
+
+                               <td> <input name="" type="number"/></td>
+
+                                <td>Descrição produto</td>   
+
+                            </tr>  
+                            <tr>
+                                <td><input type="checkbox" value="7" name="produto" /> </td>
+                              <td> <input name="" type="number"/></td>
+                                <td>Descrição produto</td>   
+                            </tr>                 
+                            <tr>
+                                <td><input type="checkbox" value="8" name="produto"/> </td>
+                                <td> <input name="" type="number"/></td>
+                                <td>Descrição produto</td>   
+                            </tr>                
+                        </tbody>
+                    </table>
+                </form>
+
+            </section>
+        </section>
+    </body>
+</html>
