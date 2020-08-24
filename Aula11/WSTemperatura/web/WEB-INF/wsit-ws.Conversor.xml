@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+ <definitions 
+ xmlns="http://schemas.xmlsoap.org/wsdl/" 
+ xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+ xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="Conversor" targetNamespace="http://ws/" xmlns:tns="http://ws/" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsrm="http://docs.oasis-open.org/ws-rx/wsrmp/200702" 
+ >
+    <message name="hello"/>
+    <message name="helloResponse"/>
+    <message name="fahrenheitToCelsius"/>
+    <message name="fahrenheitToCelsiusResponse"/>
+    <portType name="Conversor">
+        <operation name="hello">
+            <input message="tns:hello"/>
+            <output message="tns:helloResponse"/>
+        </operation>
+        <operation name="fahrenheitToCelsius">
+            <input message="tns:fahrenheitToCelsius"/>
+            <output message="tns:fahrenheitToCelsiusResponse"/>
+        </operation>
+    </portType>
+    <binding name="ConversorPortBinding" type="tns:Conversor">
+        <operation name="hello">
+            <input/>
+            <output/>
+        </operation>
+        <operation name="fahrenheitToCelsius">
+            <input/>
+            <output/>
+        </operation>
+    </binding>
+    <service name="Conversor">
+        <port name="ConversorPort" binding="tns:ConversorPortBinding"/>
+    </service>
+</definitions>
