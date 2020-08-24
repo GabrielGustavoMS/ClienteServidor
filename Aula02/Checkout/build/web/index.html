@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-s<cale=1.0">
+        <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-grid.min.css"/>
+        <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css"/>
+        <link rel="stylesheet" type="text/css" href="estilos/estilo.css"/>
+        <script src="jquery/jquery.js"></script>     
+        <script src="jquery/jquery.min.js.js"></script>   
+        <script>
+         
+            //Validação de campos
+            function validaCampos() {
+                //Limpa mensagens de campo
+                $("#pr0_msg, #pr1_msg, #pr2_msg, #pr3_msg, #pr4_msg ,#pr5_msg ,#pr6_msg ,#pr7_msg ,#pr8_msg,#form-invalido").empty();
+                $("#pr0_msg, #pr1_msg, #pr2_msg, #pr3_msg, #pr4_msg ,#pr5_msg ,#pr6_msg ,#pr7_msg ,#pr8_msg,#form-invalido").removeClass("invalido");
+
+                var checkeds = $("input:checkbox[name=produto]:checked");
+                var i = 0;
+                if(checkeds[0] == null){
+                    $("#form-invalido").addClass('invalido');
+                    $("#form-invalido").html("Marque ao menos uma produto para prosseguir !!!");
+                    return false;
+                }
+                 var checados = checkeds.valueOf();
+                 /*checkeds.each(function () { 
+                    var quantidadeProduto = $("#pr" + $(checkeds[i]).val() + "_quant").val();
+                    
+                    //)myIsNaN(quantidadeProduto
+                    if (quantidadeProduto === null || (!Number.isNaN(quantidadeProduto)) || quantidadeProduto=="") {
+                        
+                        return false;
+                        $("#pr"+$(checkeds[i]).val()+"_msg").addClass("invalido");
+                        $("#pr"+$(checkeds[i]).val()+"_msg").html("Preencha o campo corretamente");
+                        console.log("hgkgkguyg");
+                        
+                    }
+                   
+                    console.log("Checks: "+$(checkeds[i]).val());
+                    i++;
+                });*/
+                for(i = 0; i<checkeds.length;i++){
+                    
+                    console.log($("#pr"+($(checkeds[i]).val())+"_quant").val()+"");
+                    var quantidadeProduto = $("#pr" + $(checkeds[i]).val() + "_quant").val();
+                    if (quantidadeProduto == null || (myIsNaN(quantidadeProduto)) || quantidadeProduto=="") {
+                        
+                        
+                        $("#pr"+$(checkeds[i]).val()+"_msg").addClass("invalido");
+                        $("#pr"+$(checkeds[i]).val()+"_msg").html("Preencha o campo corretamente - somente números");
+                         return false;
+                        
+                    }
+                }
+                return true;
+            }
+            //Padrão
+            $(function () {
+                console.log("Entrou");
+                $("#btnComprar").click(function () {
+                    
+                    if (validaCampos()) {
+                        $('#form-compra').submit();
+                    }else{
+                        console.log("Form inválido")
+                    }
+                });
+            });
+            //Função definida p/ dar suporte ao IE - Porque não supor Is NaN
+            function myIsNaN(o){
+                return typeof (o) ==='number' &&isNaN(o);
+            }
+
+        </script>
+
+
+    </head>
+    <body>
+        <section class="container">
+            <h1 class="text-center">Checkout</h1>
+
+            <section class="container-fluid">
+
+                <form action="Calc" method="post" class="" id="form-compra" >
+                    
+
+                    <table id="fogoes" class="table ">
+
+                        <h2>Fogões</h2>
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>   </th>
+                                <th>Quant. </th>
+                                <th>Produto</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr >                            
+                                <td>
+                                    <input id="ck0" name="produto" value="0" type="checkbox" class="form-check-input"/>
+                                </td>
+
+                                <td> 
+                                    <input id="pr0_quant" name="pr0_quant" type="number" min="1" value="1" class="form-control"/>
+                                    <span id="pr0_msg">Favor preencher o campo corretamente</span>
+                                </td>
+
+                                <td>
+                                    <label for="ck0">
+                                        Fogão Consul 6 Bocas Erva Doce CF376B
+                                        <br>
+                                        De: R$ 699,00<br>
+                                        Por: R$ 549,90 ou 12X R$ 45,66
+                                    </label> 
+                                </td>   
+
+                            </tr>  
+                            <tr>
+                                <td>
+                                    <input  id="ck1" type="checkbox" value="1" name="produto" class="form-check-input"/>
+                                </td>
+                                <td>
+                                    <input id="pr1_quant" name="pr1_quant" type="number" min="1" value="1" class="form-control" />
+                                    <span id="pr1_msg">Favor preencher o campo corretamente</span>
+                                </td>
+                                <td>
+                                    <label for="ck1">
+                                        Fogão Brastemp 6 Bocas Clean BF076B<br>
+                                        De: R$ 1999,00 <br>
+                                        Por: R$ 999,00 ou 12x de R$83,32
+                                    </label> 
+                                </td>     
+                            </tr>                 
+                            <tr>
+                                <td>
+                                    <input id="ck2" name="produto" value="2" type="checkbox" class="form-check-input"/>
+                                </td>
+                                <td> 
+                                    <input  id="pr2_quant" name="pr2_quant" type="number" min="1" value="1" class="form-control"/>
+                                    <span id="pr2_msg"></span>
+                                </td>
+                                <td>
+                                    <label for="ck2">
+                                        Fogão Electrolux 5 Bocas Celebrate Digital 76SRB com Timer<br>
+                                        De: R$ 1299,00
+                                        Por: R$ 1199,00 ou 12x de R$99,00                                        
+                                    </label> 
+                                </td>   
+                            </tr>                
+                        </tbody>
+                    </table>
+                    <table id="freezerRefrigerador" class="table ">
+
+                        <h2>Freezer e Refrigeradores</h2>
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>   </th>
+                                <th>Quant. </th>
+                                <th>Produto</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>                            
+                                <td>
+                                    <input id="ck3" name="produto" value="3" type="checkbox"  class="form-check-input"/>
+                                </td>
+
+                                <td> 
+                                    <input id="pr3_quant" name="pr3_quant" type="number" min="1" value="1" class="form-control"/>
+                                    <span id="pr3_msg"></span>
+                                </td>
+
+                                <td>
+                                    <label for="ck3">
+                                        Refrigerador Brastemp Frost Free Duplex Ative! BRM50 c/ controle eletrônico - 429L<br>
+                                        De: R$ 2899,00<br>
+                                        Por: R$ 2299,00 ou 12x 191,66
+                                    </label> 
+                                </td>   
+
+                            </tr>  
+                            <tr>
+                                <td>
+                                    <input id="ck4" type="checkbox" value="4" name="produto" class="form-check-input"/>
+                                </td>
+                                <td> 
+                                    <input id="pr4_quant" name="pr4_quant" type="number" min="1" value="1" class="form-control"/>
+                                    <span id="pr4_msg"></span>
+                                </td>
+                                <td>
+                                    <label for="ck4">
+                                        Refrigerador Consul Frost Free Duplex CRM33EB<br>
+                                        De: R$ 1348,00<br>
+                                        Por: R$ 1099,00 ou 12x 91,66
+
+                                    </label> 
+                                </td>    
+                            </tr>                 
+                            <tr>
+                                <td>
+                                    <input id="ck5" type="checkbox" value="5" name="produto" class="form-check-input"/> 
+                                </td>
+                                <td> 
+                                    <input id="pr5_quant" name="pr5_quant" type="number" min="1" value="1" class="form-control"/>
+                                    <span id="pr5_msg"></span>
+                                </td>
+                                <td>
+                                    <label for="ck5">
+                                        Refrigerador Electrolux Duplex DC50X c/ Dispenser de água - 462 L - Inox<br>
+                                        De: R$ 2249,00<br>
+                                        Por: R$ 1849,90 ou 12x de R$154,16
+                                    </label> 
+                                </td>   
+                            </tr>                
+                        </tbody>
+                    </table>
+
+                    <table id="lavadoras" class="table ">
+                        <h2>Lavadoras</h2>
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>      </th>
+                                <th>Quant. </th>
+                                <th>Produto</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>                            
+                                <td><input id="ck6" type="checkbox" value="6" name="produto" class="form-check-input" /> </td>
+
+                                <td>
+                                    <input id="pr6_quant" name="pr6_quant" type="number" min="1" value="1" class="form-control"/>
+                                    <span id="pr6_msg"></span>
+                                </td>
+                                <td>
+                                    <label for="ck6">
+                                        Lavadoura de roupas Brastemp 11kg Ative! BWL11A<br>
+                                        De: R$ 1419,00<br>
+                                        Por: R$ 1.295,89 ou 12x de R$ 107,99
+                                    </label> 
+                                </td> 
+                            </tr>  
+                            <tr>
+                                <td>
+                                    <input id="ck7" type="checkbox" value="7" name="produto" class="form-check-input" /> 
+                                </td>
+                                <td> 
+                                    <input id="pr7_quant" name="pr7_quant" type="number" min="1" value="1" class="form-control"/>
+                                    <span id="pr7_msg"></span>
+                                </td>
+                                <td>
+                                    <label for="ck7">
+                                        Lavadora de Roupas Electrolux 12 kg Turbo Economia LTE12<br>
+                                        De: R$ 1499,00<br>
+                                        Por: R$ 1099,00 ou 12x 91,66                                        
+                                    </label> 
+                                </td>  
+                            </tr>                 
+                            <tr>
+                                <td>
+                                    <input id="ck8" type="checkbox" value="8" name="produto" class="form-check-input"/> 
+                                </td>
+                                <td> 
+                                    <input id="pr8_quant" name="pr8_quant" type="number" min="1" value="1" class="form-control"/>
+                                    <span id="pr8_msg"></span>
+                                </td>
+                                <td>
+                                    <label for="ck8">
+                                        Lavadora de Roupas Electrolux 15 kg Blue Touch LBU15 com Ultra Clean<br>
+                                        De: R$ 1499,00<br>
+                                        Por: R$ 1099,00 ou 12x 91,66  
+                                    </label> 
+                                </td>    
+                            </tr>                
+                        </tbody>
+                    </table>
+                    
+                    <div class="row">
+                        <div class="col col-6">
+                            <button id="btnComprar" type="button" class="btn btn-success mx-0-auto">Comprar</button>
+                        </div>
+                        <div class="col col-6">
+                            <span id="form-invalido"></span>
+                            
+                        </div>
+                        
+                    </div>
+                   
+                    
+                    
+                    
+                </form>
+
+            </section>
+        </section>
+        <script src="bootstrap/js/bootstrap.min.js">
+        </script>
+    </body>
+</html>
