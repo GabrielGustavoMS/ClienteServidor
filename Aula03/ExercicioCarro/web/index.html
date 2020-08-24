@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-grid.min.css"/>
+        <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css"/>
+        <link rel="stylesheet" type="text/css" href="estilos/estilo.css"/>
+        <script src="jquery/jquery.js"></script>     
+        <script src="jquery/jquery.min.js.js"></script>   
+    </head>
+    <body>
+        <section class="container">
+            <form id="form-ex-carro" class="form-horizontal  p-2" method="post" >
+                <fieldset class="border border-dark p-2 m-1">
+                    
+                    <legend>Exercício Carro</legend>
+                   
+
+
+
+                    <section class="form-group">
+                        <label for="nome-txt" class="">
+                            Nome:
+                        </label>
+
+                        <input id="nome-txt" type="text" class="form-control"/>
+                        <input id="cpf-txt" type="text"  class="form-control"/>
+                        <input id="endereco-txt" type="text"  class="form-control"/>
+                        <input id="telelefone-tel" type="tel"  class="form-control"/>   
+
+
+                    </section>
+
+                    <section class="form-group">
+                        <h2>
+                            Modelos
+                        </h2>
+                        <input id="modelo-carro-ex" type="radio" name="modelo-carro"/>
+                        <label for="modelo-carro-ex">
+                            EX
+                        </label>
+                        <input id="modelo-carro-elx" type="radio" name="modelo-carro"/>
+                        <label for="modelo-carro-elx">
+                            ELX
+                        </label>
+                        <input id="modelo-carro-master" type="radio" name="modelo-carro"/>
+                        <label for="modelo-carro-master">
+                            Master
+                        </label>                
+                    </section>
+
+                    <section class="form-group">
+                        <h2>
+                            Portas
+                        </h2>
+                        <input id="nr-potas-2" type="radio" name="numero-portas-carro" value="2"/>
+                        <label for="nr-portas-2">
+                            2 Portas
+                        </label>
+                        <input id="nr-potas-4" type="radio" name="numero-portas-carro" value="4"/>
+                        <label for="nr-portas-4">
+                            4 Portas
+                        </label> 
+                    </section>
+
+                    <section class="form-row">
+                        <article class="col-4">
+                            <section class="form-check">
+
+                                <input id="ar-condicionado-carro" type="checkbox" name="acessorios-carro" value="Ar Condicionado" class="form-check-input"/>
+                                <label for="ar-condicionado-carro" class="form-check-label">
+                                    Ar condicionado
+                                </label>
+                            </section>
+                        </article>
+                        <article class="col-4">
+                            <section class="form-check">
+                                <input id="direcao-carro" type="checkbox" name="acessorios-carro" value="Direção" class="form-check-input"/>
+                                <label for="direcao-carro" class="form-check-label">
+                                    Direção
+                                </label>
+                            </section>
+                        </article>
+                        <article class="col-4">
+                            <section class="form-check">
+                                <input id="ve-te-carro" type="checkbox" name="acessorios-carro" value="VE/TE" class="form-check-input"/>
+                                <label for="ve-te-carro" class="form-check-label">
+                                    Vidro Elétrico/Trava elétrica
+                                </label>
+                            </section>
+                        </article>
+                    </section>
+                </fieldset>
+            </form>
+        </section>
+
+
+    </body>
+</html>
