@@ -4,17 +4,9 @@
         <servlet-name>FormularioAgenda</servlet-name>
         <servlet-class>Business.FormularioAgenda</servlet-class>
     </servlet>
-    <servlet>
-        <servlet-name>FormularioAgendaExcluir</servlet-name>
-        <servlet-class>Business.FormularioAgendaExcluir</servlet-class>
-    </servlet>
     <servlet-mapping>
         <servlet-name>FormularioAgenda</servlet-name>
         <url-pattern>/FormularioAgenda</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>FormularioAgendaExcluir</servlet-name>
-        <url-pattern>/FormularioAgendaExcluir</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

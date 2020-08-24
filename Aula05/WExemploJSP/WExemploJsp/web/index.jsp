@@ -11,8 +11,6 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        <link rel="stylesheet" href="bootstrap/css/bootstrap.css"/>
-        
     </head>
     <body>
         <h1>Contatos</h1>
@@ -36,12 +34,9 @@
             </tr>
             <%
             for(int ind=0;ind<agendaNome.size();ind++){
-                
                 out.print("<tr><td>" + agendaNome.get(ind) + "</td><td>" + agendaTel.get(ind) + "</td></tr>" );
             }
             %>
         </table>
-        <script src="bootstrap/js/bootstrap.js"></script>
-        <script src="jquery/jquery.js"></script>
     </body>
 </html>
