@@ -1,2 +1,2 @@
 # ClienteServidor
-Esse repositório contém todos os exercícios desenvolvidos durantes a dsciplina de cliente servidor.
+Esse repositório contém os exercícios referentes à disciplina de Cliente Servidor.
